@@ -1,0 +1,159 @@
+
+
+/*Teil 1: Allgemeines*/
+
+
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+table{
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+thead, tbody{
+  border-style: solid;
+  border-color: #dddddd;
+  border-width: 2px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  width:50%;
+}
+
+td {
+  color: black;
+  text-decoration: none;
+}
+
+td > a:hover:not(.active) {
+  background-color: #ffffff;
+}
+
+td > a{
+  color: black;
+  text-decoration:none;
+  display:block;
+  padding:15px;
+}
+
+li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li > a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #333;
+}
+
+$td > a{										/*klappt noch nicht in aktueller CSS Version --> Parentselector (Würde Klasse "anchor" ersetzen)*/
+   padding:0;
+ }
+
+.anchor {
+  padding:0;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 2px 2px;
+}
+
+
+
+
+/*Teil 2*/
+
+
+
+
+
+
+
+body > ul {										/*Nav*/
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+body > ul li {									/*Nav*/
+  float: left;
+}
+
+body > ul li:last-child{						/*Logout*/
+  float: right;
+  background-color: white;
+  border-style: solid;
+  border-color: #333;
+  border-width: 1px;
+}
+
+body > ul li:last-child a{						/*Logout*/
+  color: black;
+}
+
+li:last-child a:hover:not(.active) {			/*Logout*/
+  background-color: #f2f2f2;
+}
+
+body > ul li:nth-last-child(2){					/*Heading*/
+  float: right;
+}
+
+body > div > form > textarea {					/*Feedback*/
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {							/*Feedback*/
+  width: 100%;
+  height: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {						/*Feedback*/
+  background-color: #45a049;
+}
+
+td > fieldset{									/*Stufe*/
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+td > fieldset > ul{								/*Stufe*/
+  list-style: none;
+  padding: 0;
+}
+
+fieldset a {									/*Klassenauswahl Schüler, Admin*/
+  color: #111;
+  text-decoration: none;
+}

@@ -1,0 +1,34 @@
+<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+<h1>Studenten</h1>
+
+  <div *ngIf="current">
+    <h2>Infos {{current.name}}</h2>
+
+    <input [(ngModel)]="current.name" required>
+    <input [(ngModel)]="current.lastname" required>
+    <input type="number" [(ngModel)]="current.id" required>
+
+    <input type="checkbox" [(ngModel)]="current.active" required>
+
+    <select [(ngModel)]="current.courses">
+      <option *ngFor="let c of dataService.courses" [ngValue]="c">{{c.name}}</option>
+    </select>
+    <br>
+
+    <button (click)="save()" [disabled]="!current.name || !current.lastname">Save</button>
+    <button (click)="remove()">Delete</button>
+  </div>
+
+  <div *ngIf="!current">
+  <ul>
+    <li *ngFor="let s of dataService.students">
+      <button (click)="edit(s)" class="mdl-button mdl-js-button md-button--raised">
+        {{s.name}}
+        {{s.lastname}}
+      </button>
+    </li>
+  </ul>
+
+  <button (click)="addStudent()">Create</button>
+</div>
+</div>

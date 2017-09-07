@@ -1,0 +1,26 @@
+<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+<h1>Kurse</h1>
+
+<div *ngIf="current">
+  <h2>Info {{current.name}}</h2>
+
+  <input [(ngModel)]="current.name" required>
+
+  <br>
+
+  <button (click)="save()" [disabled]="!current.name">Save</button>
+  <button (click)="remove()">Delete</button>
+</div>
+
+<div *ngIf="!current">
+  <ul>
+    <li *ngFor="let c of dataService.courses">
+      <button (click)="edit(c)" class="mdl-button mdl-js-button md-button--raised">
+        {{c.name}}
+      </button>
+    </li>
+  </ul>
+
+  <button (click)="addCourse()">Create</button>
+</div>
+</div>
